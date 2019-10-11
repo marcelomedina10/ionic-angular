@@ -302,7 +302,7 @@ export function updateContainerSize(s, plt) {
     s._renderedSize = isHorizontal(s) ? width : height;
 }
 export function updateSlidesSize(s, plt) {
-    s._slides = s._wrapper.querySelectorAll('.' + CLS.slide);
+    s._slides = (Array.from(s._wrapper.children).filter(el => el.classList.contains(CLS.slide)));
     s._snapGrid = [];
     s._slidesGrid = [];
     s._slidesSizesGrid = [];
